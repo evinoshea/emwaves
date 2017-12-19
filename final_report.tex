@@ -1,0 +1,9 @@
+
+I solved a similar problem where there was a point source and a conductor that the source would encounter. A video of this will be attached. 
+
+
+Initially, to write the FDTD code, I did not plan the code and tried to use if statements for the cases where the boundary was encountered or there was a conductor. This would not work so I decided to re-write the code. I made an object that contained all of the information about the simulation. One of the properties of the simulation object was a list of grid object. Each grid object is the size of the grid and contains the fields at each point. Each grid corresponds to one time step. I made a function that will create the next time step and calculate the grid values for that time step and save them. 
+
+The time evolving is difficult. Initially, I thought that if I made my grid twice as large then I could od the half steps, but this did not work. I had written the code though so that I could simply change the way the next timestep was calculated and nothing else. I then tried to treat the half steps as averages between two steps and came up with my own way to evolve the fields, but this did not work as the half steps are there to keep the E and H fields offset for the difference calculations. I finally realized that H and E should be offset in time and in space. I did this by changing the inputs to the source and the calculation of the H field was nearly unchanged. I now have numerical erros that I cannot understand.
+
+I also made a short code that plays the output data as a movie so that is can be watched much faster than waiting for the simulation to run.
