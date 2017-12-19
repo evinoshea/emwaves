@@ -35,7 +35,7 @@ if __name__ == '__main__':
               'xmax': size[0],
               'ymin': int(m-(size[1]/5.0)),
               'ymax': int(m+(size[1]/5.0)),
-              'duration': 10 }  
+              'duration': 100 }  
 
 
     sim = fourspace.fourspace(grid_zero,
